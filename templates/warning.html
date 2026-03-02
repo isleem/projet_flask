@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simulation</title>
+</head>
+<body style="text-align:center; font-family: Arial;">
+    <h2 style="color:red;">⚠️ Simulation de Phishing</h2>
+    <p>Vous avez entré :</p>
+    <p>Email : {{ email }}</p>
+
+    <p>
+        Ceci est une démonstration pédagogique.<br>
+        Ne jamais entrer vos informations sans vérifier :
+    </p>
+
+    <ul style="list-style:none;">
+        <li>✔ L’URL</li>
+        <li>✔ Le HTTPS</li>
+        <li>✔ Le certificat</li>
+    </ul>
+
+    <p style="color: gray;">
+        IP capturée : {{ request.remote_addr }}
+    </p>
+    
+</body>
+</html>
