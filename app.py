@@ -35,6 +35,5 @@ def fake_email():
     Click here to verify your account
     </a>
     """
-
 if __name__ == "__main__":
     app.run(debug=True)
