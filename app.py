@@ -10,16 +10,24 @@ def home():
 @app.route("/login", methods=["POST"])
 def login():
     email = request.form.get("email")
-    password = request.form.get("password")
+    
 
     # Enregistrer dans un fichier local (simulation pédagogique)
     with open("captured_data.txt", "a") as f:
         f.write(f"Date: {datetime.datetime.now()}\n")
         f.write(f"Email: {email}\n")
-        f.write(f"Password: {password}\n")
         f.write("-" * 30 + "\n")
 
     return render_template("warning.html", email=email, request=request)
+
+@app.route("/view")
+def view():
+    try:
+        with open("captured_data.txt", "r", encoding="utf-8") as f:
+            content = f.read()
+        return f"<pre>{content}</pre>"
+    except:
+        return "Fichier introuvable"
 
 @app.route("/fake-email")
 def fake_email():
